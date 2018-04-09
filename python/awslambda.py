@@ -19,7 +19,7 @@ def createCloudInit(path):
     initString = f.read()
     
     # add a line to the scriptfor the actual analysis
-    initString += "python /tools/su2caws/vaisu2c/AwsS3.py " + path + "\n"
+    initString += "python /tools/su2caws/python/AwsS3.py " + path + "\n"
     
     #and then a line that shuts down the instance
     initString += "shutdown -h now \n"
