@@ -8,7 +8,7 @@ yum install -y wget git
 #pull down the analysis script and run it
 mkdir /tools
 cd /tools
-wget https://s3.us-east-2.amazonaws.com/su2csoftware/vaisu2c/AwsS3.py
+git clone https://github.com/VanAndelInstitute/su2caws.git
 
 #the actual line to call the analysisi will go after this, it should look like the following:
 #python /tools/AwsS3.py su2ctest/test/data1.txt

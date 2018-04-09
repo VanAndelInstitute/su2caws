@@ -15,11 +15,11 @@ import sys
 
 #retrieves the instance cloud-init script that will need to be modifiied and passed to the instance creation call
 def createCloudInit(path):
-    f = urllib.urlopen("https://s3.us-east-2.amazonaws.com/su2csoftware/bootstrap/bootstrap.sh")
+    f = urllib.urlopen("https://raw.githubusercontent.com/VanAndelInstitute/su2caws/master/bootstrap/bootstrap.sh")
     initString = f.read()
     
     # add a line to the scriptfor the actual analysis
-    initString += "python /tools/AwsS3.py " + path + "\n"
+    initString += "python /tools/su2caws/vaisu2c/AwsS3.py " + path + "\n"
     
     #and then a line that shuts down the instance
     initString += "shutdown -h now \n"
